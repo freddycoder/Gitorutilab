@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gitorutilab", "Gitorutilab\Gitorutilab.csproj", "{22C7D52B-47C7-4303-9200-9367620722A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gitlab.Proxy", "Gitlab.Proxy\Gitlab.Proxy.csproj", "{799B08B0-4985-4B16-849A-BF1D6317BF3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22C7D52B-47C7-4303-9200-9367620722A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C7D52B-47C7-4303-9200-9367620722A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C7D52B-47C7-4303-9200-9367620722A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C7D52B-47C7-4303-9200-9367620722A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799B08B0-4985-4B16-849A-BF1D6317BF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799B08B0-4985-4B16-849A-BF1D6317BF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799B08B0-4985-4B16-849A-BF1D6317BF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799B08B0-4985-4B16-849A-BF1D6317BF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD7C7872-C8C6-44BF-B9EC-16F5A322A419}
+	EndGlobalSection
+EndGlobal

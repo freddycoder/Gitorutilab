@@ -1,0 +1,74 @@
+﻿@page "/"
+@inject IOptions<GitlabClientOptions> options
+
+<PageTitle>Index</PageTitle>
+
+<h1>Gitorutilab</h1>
+
+An app to automate task related to gitlab
+
+<h2>Configuratios</h2>
+
+<div class="row">
+    <EditForm class="col-4 mt-2" Model="AppSettings" OnValidSubmit="SaveSettings">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="exampleInputPassword1">Host url</label>
+            <SafeTextInput id="hostUrl"
+                           class="form-control"
+                           @bind-Value="HostUrl"
+                           type="text"
+                           placeholder="HOST URL" />
+        </div>
+        <div class="form-group">
+            <label for="inputOrganisation">Authentication token</label>
+            <SafeTextInput id="authenticationToken"
+                           class="form-control"
+                           @bind-Value="AuthenticationToken"
+                           type="text"
+                           aria-describedby="describeOrganisation"
+                           placeholder="Organisation" />
+        </div>
+        <div class="form-group">
+            <label for="inputOrganisation">Repos folder</label>
+            <SafeTextInput id="reposFolder"
+                           class="form-control"
+                           @bind-Value="ReposFolder"
+                           type="text"
+                           aria-describedby="describeOrganisation"
+                           placeholder="Repos folder" />
+        </div>
+        @*<input name="__RequestVerificationToken" type="hidden" value="@TokenProvider.XsrfToken">*@
+        <button class="btn btn-secondary">Save</button>
+    </EditForm>
+</div>
+
+@code {
+    public AppSettings AppSettings { get; set; } = new AppSettings();
+
+    public string? HostUrl { get; set; }
+
+    public string? AuthenticationToken { get; set; }
+
+    public string? ReposFolder { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        var option = options.Value;
+
+        HostUrl = option.HostUrl;
+        AuthenticationToken = option.AuthenticationToken;
+        ReposFolder = AppSettings.ReposFolder;
+
+        return Task.CompletedTask;
+    }
+
+    public Task SaveSettings()
+    {
+        options.Value.HostUrl = HostUrl;
+        options.Value.AuthenticationToken = AuthenticationToken;
+
+        return Task.CompletedTask;
+    }
+}
